@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+    <section class="Nav-bar">
+
+            <div class="logo">Hospital</div>
+            <div class="sectionnav">
+                <a class="navs" href="">Home</a>
+                <a class="navs" href="">About</a>
+                <a class="navs" href="">Form</a>
+                <a class="navs" href="">Footer</a>
+
+        </div>
+    </section>
+
+    <section>
+    <form id="form">
+
+    <section class="form">
+        <label for="fullname"> Full Name :</label>
+        <input type="text" name="fullName" id="fullName" > <br>
+        <label for="pwd">Password </label>
+        <input type="password" id="pwd" name="pwd"> <br>
+        <label for="date">Date Of Birth</label>
+        <input type="date" id="date" name="date"> <br>
+        <label for="gender">Gender : </label>
+        <input type="radio" name="gender" id="female" value="female">
+        <label for="female"> Female</label>
+        <input type="radio" name="gender" id="male" value="male">
+        <label for="male"> Male</label> <br>
+        <label for="tel"> Phone Number : </label>
+        <input type="tel" name="tel" id="tel" placeholder="079-0000000"> <br>
+        <label for="chronicdisease">Chronic diseases : </label>
+        <select id="chronicdisease" name="chronicdisease">
+        <option value="Heart Disease">Heart Disease</option>
+        <option value="Hypertension">Hypertension</option>
+        <option value="Asthma">Asthma</option>
+        <option value="Cancer">Cancer</option>
+        <option value="No">No</option>
+        </select><br>
+        <label for="img">Enter your (URL) image : </label>
+        <input type="text" name="img" id="img"> <br>
+        <button type="submit"> Submit </button>
+
+    </form>
+</section>
+    <button id="clear">Clear </button>
+
+    
+    <div id="card">
+        <div id="imageforpatients"></div>
+        <div id="user-inf"></div>
+    </div>
+        
+
+        <script src="App.js"></script>
+
+
+
+
+    
+    
+</body>
+</html>
