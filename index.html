@@ -6,6 +6,175 @@
     <title>Document</title>
     <link rel="stylesheet" href="Style.css">
 </head>
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Navbar styles */
+.Nav-bar {
+    position: fixed;
+
+    width: 100%;
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.sectionnav {
+    display: flex;
+    align-items: center;
+}
+
+.navs {
+    color: #fff;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s;
+}
+
+.navs:hover {
+    background-color: #575757;
+}
+
+/* Form styles */
+form {
+   
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 20px 0;
+    padding-top: 100px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="tel"],
+input[type="url"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#clear {
+    background-color: #dc3545;
+}
+
+#clear:hover {
+    background-color: #c82333;
+}
+
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: red;
+}
+
+/* User card styles */
+.user-card {
+    background: #fff;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-card img {
+    max-width: 100px;
+    margin-top: 10px;
+}
+
+#imageforpatients img {
+    max-width: 100px;
+    margin: 10px;
+}
+
+#user-inf {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Footer styles */
+footer {
+    display: inline;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    bottom: 0;
+    left: 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 5px 0;
+}
+</style>
 <body>
 
     <section class="Nav-bar">
@@ -25,9 +194,34 @@
 
     <section class="form">
         <label for="fullname"> Full Name :</label>
-        <input type="text" name="fullName" id="fullName" > <br>
+        <input type="text" name="fullName" id="fullName" oninput="validForm()"> <br>
+         <ul>
+            <li id="withoutspace" class="invalid">without spaces</li>
+         </ul>
+
+         <label for="email">Email : </label>
+         <input type="email" name="email" id="email" oninput="validForm()">
+         <ul>
+            <li id="emailvalid" class="invalid">follows email format</li>
+         </ul>
+
+
         <label for="pwd">Password </label>
-        <input type="password" id="pwd" name="pwd"> <br>
+        <input type="password" id="pwd" name="pwd" oninput="validForm()"> <br>
+        
+               
+                                      
+
+        <ul>
+             <li id="length" class="invalid" >At least 8 characters long</li>
+            <li id="lowercase" class="invalid">At least one lowercase letter</li>
+            <li id="uppercase" class="invalid">At least one uppercase letter</li>
+            <li id="digit" class="invalid">At least one digit </li>
+            <li id="special" class="invalid"> At least one specia; character</li>
+        </ul>
+
+
+
         <label for="date">Date Of Birth</label>
         <input type="date" id="date" name="date"> <br>
         <label for="gender">Gender : </label>
@@ -36,7 +230,10 @@
         <input type="radio" name="gender" id="male" value="male">
         <label for="male"> Male</label> <br>
         <label for="tel"> Phone Number : </label>
-        <input type="tel" name="tel" id="tel" placeholder="079-0000000"> <br>
+        <input type="tel" name="tel" id="tel" placeholder="079-0000000" oninput="validForm()"> <br>
+        <ul>
+            <li id = "telvalid" class="invalid" >10 digits starts with 07</li>
+        </ul>
         <label for="chronicdisease">Chronic diseases : </label>
         <select id="chronicdisease" name="chronicdisease">
         <option value="Heart Disease">Heart Disease</option>
@@ -59,6 +256,15 @@
         <div id="user-inf"></div>
     </div>
         
+
+
+
+    <footer class="footer">
+        <div>
+            <a href="">Email</a>
+            <p>C</p>
+        </div>
+    </footer>
 
         <script src="App.js"></script>
 
